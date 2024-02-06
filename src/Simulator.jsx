@@ -7,7 +7,7 @@ import "./styles/Modal.css";
 import RemainingDialog from "./components/dialogs/RemainingDialog";
 import data from "./models";
 import BarChart from "./components/charts/BarChart";
-import PieChart from "./components/charts/pieChart";
+import PieChart from "./components/charts/PieChart";
 import "./styles/Simulator.css";
 
 export default function Simulator({ priority }) {
