@@ -1,0 +1,60 @@
+.simulatorBox {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.chartBox {
+  flex: 1 0 auto;
+  display: flex;
+  height: 100%;
+}
+
+.pieBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  width: 100%;
+}
+
+.barChart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  width: 100%;
+}
+
+.pieBox,
+.barChart {
+  border: 1px solid black;
+}
+
+.percentages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .simulatorBox {
+    justify-content: flex-start;
+  }
+
+  .chartBox {
+    flex-direction: column;
+    flex: 0 1 auto;
+  }
+
+  .pieBox {
+    flex-direction: column;
+  }
+
+  .pieBox,
+  .barChart {
+    max-width: 100%;
+  }
+}
