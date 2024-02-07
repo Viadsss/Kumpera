@@ -1,32 +1,50 @@
-import Simulator from "./Simulator";
-import Describe from "./start/Describe";
-import Kumpera from "./start/Kumpera";
+import Simulator from "./pages/Simulator";
+import Describe from "./pages/Describe";
+import Kumpera from "./pages/Kumpera";
 import { useState } from "react";
-import Prioritize from "./start/Prioritize";
+import Prioritize from "./pages/Prioritize";
 import "./styles/App.css";
+import Summary from "./pages/Summary";
+import data from "./models";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [priority, setPriority] = useState("");
+  const [dayData, setDayData] = useState(data);
 
   function handleNextPage() {
     setCurrentPage(currentPage + 1);
   }
 
-  function handleStartpage() {
+  function handleStartPage() {
     setCurrentPage(1);
+  }
+
+  function handleResetPage() {
+    setCurrentPage(1);
+    setDayData(data);
   }
 
   return (
     <div className="content">
       {currentPage === 1 && <Kumpera nextPage={handleNextPage} />}
       {currentPage === 2 && (
-        <Describe nextPage={handleNextPage} startPage={handleStartpage} />
+        <Describe nextPage={handleNextPage} startPage={handleStartPage} />
       )}
       {currentPage === 3 && (
         <Prioritize nextPage={handleNextPage} prioritize={setPriority} />
       )}
-      {currentPage === 4 && <Simulator priority={priority} />}
+      {currentPage === 4 && (
+        <Simulator
+          priority={priority}
+          dayData={dayData}
+          setDayData={setDayData}
+          nextPage={handleNextPage}
+        />
+      )}
+      {currentPage === 5 && (
+        <Summary dayData={dayData} resetPage={handleResetPage} />
+      )}
     </div>
   );
 }

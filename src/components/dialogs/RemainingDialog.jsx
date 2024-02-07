@@ -5,6 +5,7 @@ export default function RemainingDialog({
   stopDialog,
   currentExtra,
   handleSpendingRemain,
+  setRemainingMoney,
 }) {
   const [spend, setSpend] = useState("");
 
@@ -13,7 +14,10 @@ export default function RemainingDialog({
     if (valid) stopDialog();
   }
 
-  if (currentExtra === 0) stopDialog();
+  if (currentExtra === 0) {
+    setRemainingMoney(0);
+    stopDialog();
+  }
 
   return (
     <div className="modal">
@@ -41,4 +45,5 @@ RemainingDialog.propTypes = {
   stopDialog: PropTypes.func.isRequired,
   currentExtra: PropTypes.number.isRequired,
   handleSpendingRemain: PropTypes.func.isRequired,
+  setRemainingMoney: PropTypes.func.isRequired,
 };

@@ -1,18 +1,16 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import AllowanceDialog from "./components/dialogs/AllowanceDialog";
-import SplitDialog from "./components/dialogs/SplitDialog";
-import SaveDialog from "./components/dialogs/SaveDialog";
-import "./styles/Modal.css";
-import RemainingDialog from "./components/dialogs/RemainingDialog";
-import data from "./models";
-import BarChart from "./components/charts/BarChart";
-import PieChart from "./components/charts/PieChart";
-import "./styles/Simulator.css";
+import AllowanceDialog from "../components/dialogs/AllowanceDialog";
+import SplitDialog from "../components/dialogs/SplitDialog";
+import SaveDialog from "../components/dialogs/SaveDialog";
+import RemainingDialog from "../components/dialogs/RemainingDialog";
+import BarChart from "../components/charts/BarChart";
+import PieChart from "../components/charts/PieChart";
+import "../styles/Modal.css";
+import "../styles/Simulator.css";
 
-export default function Simulator({ priority }) {
+export default function Simulator({ priority, dayData, setDayData, nextPage }) {
   const [currentDialog, setCurrentDialog] = useState(1);
-  const [dayData, setDayData] = useState(data);
   const [day, setDay] = useState(1);
   const [currentAllowance, setCurrentAllowance] = useState(0);
   const [currentExtra, setcurrentExtra] = useState(0);
@@ -26,9 +24,14 @@ export default function Simulator({ priority }) {
     setCurrentDialog(0);
   }
 
-  function startDialog() {
-    setDay(day + 1);
-    setCurrentDialog(1);
+  function nextDay() {
+    if (day < 30) {
+      setDay(day + 1);
+      setCurrentDialog(1);
+    } else {
+      nextPage();
+      setDay(1);
+    }
   }
 
   function handleAllowanceData(allowance) {
@@ -45,7 +48,10 @@ export default function Simulator({ priority }) {
     }
 
     const newDayData = [...dayData];
-    newDayData[day - 1].allowance = amount;
+    newDayData[day - 1] = {
+      ...newDayData[day - 1],
+      allowance: amount,
+    };
     setCurrentAllowance(amount);
     setDayData(newDayData);
     return true;
@@ -53,8 +59,11 @@ export default function Simulator({ priority }) {
 
   function handleNeedsWantsExtraData(needs, wants, extra) {
     const newDayData = [...dayData];
-    newDayData[day - 1].needs = needs;
-    newDayData[day - 1].wants = wants;
+    newDayData[day - 1] = {
+      ...newDayData[day - 1],
+      needs,
+      wants,
+    };
     setcurrentExtra(extra);
     setDayData(newDayData);
   }
@@ -80,7 +89,10 @@ export default function Simulator({ priority }) {
     }
 
     const newDayData = [...dayData];
-    newDayData[day - 1].savings = amount;
+    newDayData[day - 1] = {
+      ...newDayData[day - 1],
+      savings: amount,
+    };
     setcurrentExtra(currentExtra + remainingMoney - amount);
     setDayData(newDayData);
     return true;
@@ -139,11 +151,12 @@ export default function Simulator({ priority }) {
           stopDialog={stopDialog}
           currentExtra={currentExtra}
           handleSpendingRemain={handleSpendingRemain}
+          setRemainingMoney={setRemainingMoney}
         />
       )}
       <div className="simulatorBox">
         <div>
-          <div>Day {day}</div>
+          <h1>Day {day}</h1>
           <div>Remaining money: {remainingMoney}</div>
         </div>
         <div className="chartBox">
@@ -151,7 +164,7 @@ export default function Simulator({ priority }) {
           <PieChart chartData={dayData} remainingMoney={remainingMoney} />
         </div>
         <div>
-          <button onClick={startDialog}>Next Day</button>
+          <button onClick={nextDay}>Next Day</button>
         </div>
       </div>
     </>
@@ -160,4 +173,7 @@ export default function Simulator({ priority }) {
 
 Simulator.propTypes = {
   priority: PropTypes.string.isRequired,
+  dayData: PropTypes.array.isRequired,
+  setDayData: PropTypes.func.isRequired,
+  nextPage: PropTypes.func.isRequired,
 };
