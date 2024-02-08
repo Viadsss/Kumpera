@@ -7,24 +7,36 @@ export default function Summary({ dayData, resetPage }) {
   const savePercent = ((savingsTotal / allowanceTotal) * 100).toFixed(2);
 
   let message = "";
-  if (savePercent < 15) {
+  if (savePercent < 10) {
     message = "You need to save more next time! 🥊";
-  } else if (savePercent < 20) {
+  } else if (savePercent < 15) {
     message = "Keep working on it! You are close! 💪";
-  } else if (savePercent < 25) {
-    message = "You did well! You are on the target! 🎯";
+  } else if (savePercent < 20) {
+    message = "You did well! 🎯";
   } else {
     message = "Amazing! You are so frugal! 💸";
   }
 
   return (
-    <div>
-      <div>Your Total Allowancce: {allowanceTotal}</div>
-      <div>Your Total Save: {savingsTotal}</div>
-      <div>
-        <h2>You saved of {savePercent}% your allowance</h2>
-        <h2>{message}</h2>
-        <button onClick={resetPage}>Reset</button>
+    <div className="summary_container">
+      <div className="summary_box">
+        <div className="summary_info">
+          <div>
+            Your Total Allowance: <span>{allowanceTotal}</span>
+          </div>
+          <div>
+            Your Total Save: <span>{savingsTotal}</span>
+          </div>
+        </div>
+        <div className="summary_message">
+          <div>
+            You saved of <span>{savePercent}%</span> your allowance
+          </div>
+          <div>{message}</div>
+        </div>
+        <div className="summary_btn">
+          <button onClick={resetPage}>Reset</button>
+        </div>
       </div>
     </div>
   );

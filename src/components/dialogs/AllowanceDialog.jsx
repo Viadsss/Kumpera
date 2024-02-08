@@ -13,17 +13,19 @@ export default function AllowanceDialog({ nextDialog, handleAllowanceData }) {
     <div className="modal">
       <div className="overlay"></div>
       <div className="modal-content">
-        <div>
-          <label>
-            Allowance for today:
+        <div className="allowance_box">
+          <div className="allowance_field">
+            <label>Allowance for today:</label>
             <input
               type="text"
               name="allowance"
               value={allowance}
               onChange={(e) => setAllowance(e.target.value)}
             />
-          </label>
-          <button onClick={handleButtonClick}>Add Allowance</button>
+          </div>
+          <div className="allowance_btn">
+            <button onClick={handleButtonClick}>Add Allowance</button>
+          </div>
         </div>
       </div>
     </div>

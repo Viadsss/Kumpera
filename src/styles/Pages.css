@@ -1,0 +1,348 @@
+/* Kumpera */
+.kumpera_container {
+  min-height: inherit;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  padding: 8rem 6rem;
+  column-gap: 5rem;
+}
+
+.kumpera_text-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.kumpera_icon {
+  position: absolute;
+  top: -3rem;
+  left: -1rem;
+}
+
+.kumpera_icon img {
+  max-width: 4rem;
+  max-height: 4rem;
+}
+
+.kumpera_title {
+  font-family: "Mali", cursive;
+  font-size: 4rem;
+  letter-spacing: 1px;
+}
+
+.kumpera_subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.kumpera_headline {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: lighter;
+  margin-top: 1rem;
+}
+
+.kumpera_about {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.kumpera_btn {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 1rem 1.75rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+
+.kumpera_btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 80px -5px #fb6f92;
+}
+
+.kumpera_img-container {
+  box-shadow: -17px 15px 10px 0px rgba(255, 179, 198, 0.7);
+  border-radius: 2rem;
+}
+
+.kumpera_img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+/* Describe */
+.describe_container {
+  min-height: inherit;
+  background-image: url("/assets/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+  padding: 8rem 6rem;
+}
+
+.describe_box {
+  background-color: #ffe9f0;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  max-width: 50rem;
+}
+
+.describe_title {
+  background-color: #fb6f92;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Mali", cursive;
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.describe_question {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.describe_btns {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.describe_btns > button {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.describe_btns > button:hover {
+  border: 2px solid #529fe3;
+  transform: translateY(-10px);
+}
+
+/* Prioritize */
+.prioritize_container {
+  min-height: inherit;
+  background-image: url("/assets/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+  padding: 8rem 6rem;
+}
+
+.prioritize_box {
+  background-color: #ffe9f0;
+  padding: 2rem 4rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  max-width: 50rem;
+}
+
+.prioritize_btns {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.prioritize_btns > button {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.prioritize_btns > button:hover {
+  border: 2px solid #529fe3;
+  transform: translateY(-10px);
+}
+
+/* Simulator */
+.simulator_container {
+  min-height: inherit;
+  background-image: url("/assets/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+}
+
+.simulator_box {
+  background-color: #ffe9f0;
+  padding: 1.5rem 3rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.simulator_box span {
+  font-weight: bold;
+}
+
+.simulator_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.simulator-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.simulator_day {
+  font-family: "Mali", cursive;
+  background-color: #fb6f92;
+  color: white;
+  width: max-content;
+  padding: 0.25rem 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fb6f92;
+}
+
+.simulator_btn {
+  display: flex;
+  justify-content: end;
+}
+
+.simulator_btn > button {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.simulator_btn > button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 100px -5px #fe5f87, 0 0 0 2px #529fe3;
+}
+
+/* Summary */
+.summary_container {
+  min-height: inherit;
+  background-image: url("/assets/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+  padding: 8rem 6rem;
+}
+
+.summary_box {
+  background-color: #ffe9f0;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  max-width: 50rem;
+}
+
+.summary_box span {
+  font-weight: bold;
+}
+
+.summary_info {
+  background-color: white;
+  padding: 2rem 8rem 2rem 2rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.summary_message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fb6f92;
+  border-radius: 2rem;
+  border: 2px solid black;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.summary_btn {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.summary_btn > button {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.summary_btn > button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 80px -5px #fb6f92;
+}

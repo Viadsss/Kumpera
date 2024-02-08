@@ -27,12 +27,23 @@ export default function SplitDialog({
     <div className="modal">
       <div className="overlay"></div>
       <div className="modal-content">
-        <div>
-          <div>Your Allowance: {currentAllowance}</div>
+        <div className="split_box">
+          <div>
+            Your Allowance: <span>{currentAllowance}</span>
+          </div>
+          <br />
           <div>Your allowance split budget:</div>
-          <div>Needs: {needs}</div>
-          <div>Wants: {wants}</div>
-          <div>Extra Money: {extra}</div>
+          <div>
+            Needs: <span>{needs}</span>
+          </div>
+          <div>
+            Wants: <span>{wants}</span>
+          </div>
+          <div>
+            Extra Money: <span>{extra}</span>
+          </div>
+        </div>
+        <div className="split_btn">
           <button onClick={handleButtonClick}>Next</button>
         </div>
       </div>

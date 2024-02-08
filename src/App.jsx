@@ -4,6 +4,7 @@ import Kumpera from "./pages/Kumpera";
 import { useState } from "react";
 import Prioritize from "./pages/Prioritize";
 import "./styles/App.css";
+import "./styles/Pages.css";
 import Summary from "./pages/Summary";
 import data from "./models";
 

@@ -10,8 +10,8 @@ import "../styles/Modal.css";
 import "../styles/Simulator.css";
 
 export default function Simulator({ priority, dayData, setDayData, nextPage }) {
-  const [currentDialog, setCurrentDialog] = useState(1);
   const [day, setDay] = useState(1);
+  const [currentDialog, setCurrentDialog] = useState(1);
   const [currentAllowance, setCurrentAllowance] = useState(0);
   const [currentExtra, setcurrentExtra] = useState(0);
   const [remainingMoney, setRemainingMoney] = useState(0);
@@ -47,6 +47,7 @@ export default function Simulator({ priority, dayData, setDayData, nextPage }) {
       return false;
     }
 
+    // cloning / copy of dayData (shallow copy to avoid mutating the original array directly)
     const newDayData = [...dayData];
     newDayData[day - 1] = {
       ...newDayData[day - 1],
@@ -154,16 +155,27 @@ export default function Simulator({ priority, dayData, setDayData, nextPage }) {
           setRemainingMoney={setRemainingMoney}
         />
       )}
-      <div className="simulatorBox">
-        <div>
-          <h1>Day {day}</h1>
-          <div>Remaining money: {remainingMoney}</div>
+      <div className="simulatorBox simulator_container">
+        <div className="simulator_box">
+          <div className="simulator_top">
+            <div className="simulator_info">
+              <h1 className="simulator_day">Day {day}</h1>
+              <div>
+                Remaining money: <span>{remainingMoney}</span>
+              </div>
+            </div>
+            <div className="circles">
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="circle"></div>
+            </div>
+          </div>
+          <div className="chartBox">
+            <BarChart chartData={dayData} />
+            <PieChart chartData={dayData} remainingMoney={remainingMoney} />
+          </div>
         </div>
-        <div className="chartBox">
-          <BarChart chartData={dayData} />
-          <PieChart chartData={dayData} remainingMoney={remainingMoney} />
-        </div>
-        <div>
+        <div className="simulator_btn">
           <button onClick={nextDay}>Next Day</button>
         </div>
       </div>

@@ -20,16 +20,208 @@
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: #f1f1f1;
-  padding: 14px 28px;
+  background-color: #ffe9f0;
+  padding: 2rem 4rem;
   border-radius: 3px;
-  max-width: 600px;
-  min-width: 300px;
+  border: 2px solid black;
+  border-radius: 2rem;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 
-/* .close-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 7px;
-} */
+/* Allowance */
+.allowance_box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.allowance_field {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.allowance_field > label {
+  font-weight: bold;
+}
+
+.allowance_field > input {
+  border: 2px solid black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.allowance_btn {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.allowance_btn > button {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.allowance_btn > button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 80px -5px #fb6f92;
+}
+
+/* Split */
+.split_box {
+  background-color: white;
+  padding: 2rem 10rem 2rem 2rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.split_box span {
+  font-weight: bold;
+}
+
+.split_btn {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.split_btn > button {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.split_btn > button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 80px -5px #fb6f92;
+}
+
+/* Save */
+.save_box {
+  background-color: white;
+  padding: 2rem 8rem 2rem 2rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.save_box span {
+  font-weight: bold;
+}
+
+.save_box span.yesterday {
+  font-style: italic;
+  font-weight: normal;
+  color: gray;
+}
+
+.save_question {
+  display: flex;
+  justify-content: center;
+}
+
+.save_field-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.save_field-btn > input {
+  border: 2px solid black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.save_btn {
+  display: flex;
+  justify-content: center;
+}
+
+.save_btn > button {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 0.25rem 1rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.save_btn > button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 80px -5px #fb6f92;
+}
+
+/* Remaining */
+.remaining_box {
+  background-color: white;
+  padding: 2rem 8rem 2rem 2rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.remaining_box span {
+  font-weight: bold;
+}
+
+.remaining_question {
+  display: flex;
+  justify-content: center;
+}
+
+.remaining_field-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.remaining_field-btn > input {
+  border: 2px solid black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.remaining_btn {
+  display: flex;
+  justify-content: center;
+}
+
+.remaining_btn > button {
+  background-color: #fb6f92;
+  font-size: 1.25rem;
+  padding: 0.25rem 1rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.remaining_btn > button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 80px -5px #fb6f92;
+}

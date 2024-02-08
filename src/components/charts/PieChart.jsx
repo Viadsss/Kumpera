@@ -19,10 +19,10 @@ export default function PieChart({ chartData, remainingMoney }) {
   };
 
   const colorsCategory = {
-    Needs: "rgb(54, 162, 235)",
-    Wants: "rgb(255, 99, 132)",
-    Savings: "rgb(255, 205, 86)",
-    "Remaining Money": "rgb(12, 142, 12)",
+    Needs: "rgba(54, 162, 235, 0.8)", // Blue
+    Wants: "rgba(255, 99, 132, 0.8)", // Red
+    Savings: "rgba(255, 206, 86, 0.8)", // Yellow
+    "Remaining Money": "rgba(75, 192, 192, 0.8)", // Green
   };
 
   const labels = Object.keys(pieData).filter((key) => pieData[key] !== 0);
@@ -34,7 +34,7 @@ export default function PieChart({ chartData, remainingMoney }) {
       {
         data: values,
         backgroundColor: labels.map((label) => colorsCategory[label]),
-        borderWidth: 2,
+        borderWidth: 5,
       },
     ],
   };

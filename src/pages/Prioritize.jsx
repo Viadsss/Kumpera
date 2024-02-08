@@ -7,10 +7,14 @@ export default function Prioritize({ nextPage, prioritize }) {
   }
 
   return (
-    <div>
-      <div>What do you want to prioritize?</div>
-      <button onClick={() => handleButtonClick("Needs")}>Needs</button>
-      <button onClick={() => handleButtonClick("Wants")}>Wants</button>
+    <div className="prioritize_container">
+      <div className="prioritize_box">
+        <div>What do you want to prioritize?</div>
+        <div className="prioritize_btns">
+          <button onClick={() => handleButtonClick("Needs")}>Needs</button>
+          <button onClick={() => handleButtonClick("Wants")}>Wants</button>
+        </div>
+      </div>
     </div>
   );
 }
