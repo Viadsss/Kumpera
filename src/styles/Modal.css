@@ -28,6 +28,7 @@
   max-width: 50rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 1rem;
 }
 
@@ -224,4 +225,21 @@
 .remaining_btn > button:hover {
   transform: translateY(-3px);
   box-shadow: 0 20px 80px -5px #fb6f92;
+}
+
+@media screen and (max-width: 900px) {
+  .split_box {
+    padding: 1rem 3rem 1rem 1rem;
+    width: 200px;
+  }
+
+  .save_box {
+    padding: 1rem 3rem 1rem 1rem;
+    width: 200px;
+  }
+
+  .remaining_box {
+    padding: 1rem 3rem 1rem 1rem;
+    width: 200px;
+  }
 }
