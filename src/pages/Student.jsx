@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+
 import BackDialog from "../components/dialogs/BackDialog";
 
 export default function Student({ nextPage, startPage }) {

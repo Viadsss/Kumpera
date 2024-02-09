@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+
+// import dialogs
 import AllowanceDialog from "../components/dialogs/AllowanceDialog";
 import SplitDialog from "../components/dialogs/SplitDialog";
 import SaveDialog from "../components/dialogs/SaveDialog";
 import RemainingDialog from "../components/dialogs/RemainingDialog";
+
+// import charts
 import BarChart from "../components/charts/BarChart";
 import PieChart from "../components/charts/PieChart";
-
 
 export default function Simulator({ priority, dayData, setDayData, nextPage }) {
   const [day, setDay] = useState(1);

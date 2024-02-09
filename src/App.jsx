@@ -1,15 +1,19 @@
-import Simulator from "./pages/Simulator";
-import Describe from "./pages/Describe";
+// importing pages
 import Kumpera from "./pages/Kumpera";
-import { useState } from "react";
+import Describe from "./pages/Describe";
+import Student from "./pages/Student";
 import Prioritize from "./pages/Prioritize";
+import Simulator from "./pages/Simulator";
+import Summary from "./pages/Summary";
+
+// importing styles
 import "./styles/App.css";
 import "./styles/Pages.css";
 import "./styles/Modal.css";
 import "./styles/Simulator.css";
-import Summary from "./pages/Summary";
+
 import data from "./models";
-import Student from "./pages/Student";
+import { useState } from "react";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
