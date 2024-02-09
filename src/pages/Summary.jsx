@@ -30,7 +30,7 @@ export default function Summary({ dayData, resetPage }) {
         </div>
         <div className="summary_message">
           <div>
-            You saved of <span>{savePercent}%</span> your allowance
+            You saved <span>{savePercent}%</span> of your allowance
           </div>
           <div>{message}</div>
         </div>
