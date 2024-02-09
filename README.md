@@ -1,8 +1,15 @@
-# React + Vite
+# Kumpera
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A student budget simulation tackling the complexities of personal finance.
+Navigate real-life scenarios, empowering students to make informed financial decisions and cultivate essential money management skills.
 
-Currently, two official plugins are available:
+Clone this project by doing these steps:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `git clone https://github.com/Viadsss/Kumpera.git`
+- `cd Kumpera`
+- `npm install`
+- `npm run dev`
+
+### Website Link: https://kumpera.netlify.app/
+
+This project uses [React](https://react.dev/) for the front-end and uses [Chart.js](https://www.chartjs.org/) specifically [react-chartjs-2](https://react-chartjs-2.js.org/) for the charting of bar and pie charts and [Vite](https://vitejs.dev/) as a build tool.
