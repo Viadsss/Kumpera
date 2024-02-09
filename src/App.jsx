@@ -5,8 +5,11 @@ import { useState } from "react";
 import Prioritize from "./pages/Prioritize";
 import "./styles/App.css";
 import "./styles/Pages.css";
+import "./styles/Modal.css";
+import "./styles/Simulator.css";
 import Summary from "./pages/Summary";
 import data from "./models";
+import Student from "./pages/Student";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,12 +33,15 @@ function App() {
     <div className="content">
       {currentPage === 1 && <Kumpera nextPage={handleNextPage} />}
       {currentPage === 2 && (
-        <Describe nextPage={handleNextPage} startPage={handleStartPage} />
+        <Student nextPage={handleNextPage} startPage={handleStartPage} />
       )}
       {currentPage === 3 && (
-        <Prioritize nextPage={handleNextPage} prioritize={setPriority} />
+        <Describe nextPage={handleNextPage} startPage={handleStartPage} />
       )}
       {currentPage === 4 && (
+        <Prioritize nextPage={handleNextPage} prioritize={setPriority} />
+      )}
+      {currentPage === 5 && (
         <Simulator
           priority={priority}
           dayData={dayData}
@@ -43,7 +49,7 @@ function App() {
           nextPage={handleNextPage}
         />
       )}
-      {currentPage === 5 && (
+      {currentPage === 6 && (
         <Summary dayData={dayData} resetPage={handleResetPage} />
       )}
     </div>
