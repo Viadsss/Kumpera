@@ -25,15 +25,6 @@ function App() {
   const [currentExtra, setcurrentExtra] = useState(0);
   const [remainingMoney, setRemainingMoney] = useState(0);
 
-  // useEffect(() => {
-  //   const storedData = localStorage.getItem("simulatorData");
-  //   if (storedData) {
-  //     const parsedData = JSON.parse(storedData);
-  //     setDayData(parsedData);
-  //     setCurrentPage(5);
-  //   }
-  // }, []);
-
   useEffect(() => {
     const storedData = localStorage.getItem("userData");
     if (storedData) {

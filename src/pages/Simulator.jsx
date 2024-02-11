@@ -27,27 +27,6 @@ export default function Simulator({
   remainingMoney,
   setRemainingMoney,
 }) {
-  // useEffect(() => {
-  //   const storedData = localStorage.getItem("userData");
-  //   if (storedData) {
-  //     const parsedData = JSON.parse(storedData);
-  //     console.log("Simulator console: ", parsedData);
-  //     if (
-  // parsedData.dayData[0].allowance !== null &&
-  // parsedData.day !== null &&
-  // parsedData.currentExtra !== null &&
-  // parsedData.remainingMoney !== null
-  //     ) {
-  //       setDay(parsedData.day);
-  //       setCurrentDialog(0); // Skip dialogs if data is present
-  //       console.log("parsedData.dayData:", parsedData.dayData);
-  //       console.log("parsedData.day:", parsedData.day);
-  //       console.log("parsedData.currentExtra:", parsedData.currentExtra);
-  //       console.log("parsedData.remainingMoney:", parsedData.remainingMoney);
-  //     }
-  //   }
-  // }, []);
-
   useEffect(() => {
     localStorage.setItem(
       "userData",
