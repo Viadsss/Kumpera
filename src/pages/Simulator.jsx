@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect } from "react";
 
 // import dialogs
 import AllowanceDialog from "../components/dialogs/AllowanceDialog";
@@ -11,12 +11,55 @@ import RemainingDialog from "../components/dialogs/RemainingDialog";
 import BarChart from "../components/charts/BarChart";
 import PieChart from "../components/charts/PieChart";
 
-export default function Simulator({ priority, dayData, setDayData, nextPage }) {
-  const [day, setDay] = useState(1);
-  const [currentDialog, setCurrentDialog] = useState(1);
-  const [currentAllowance, setCurrentAllowance] = useState(0);
-  const [currentExtra, setcurrentExtra] = useState(0);
-  const [remainingMoney, setRemainingMoney] = useState(0);
+export default function Simulator({
+  priority,
+  dayData,
+  setDayData,
+  nextPage,
+  day,
+  setDay,
+  currentDialog,
+  setCurrentDialog,
+  currentAllowance,
+  setCurrentAllowance,
+  currentExtra,
+  setcurrentExtra,
+  remainingMoney,
+  setRemainingMoney,
+}) {
+  // useEffect(() => {
+  //   const storedData = localStorage.getItem("userData");
+  //   if (storedData) {
+  //     const parsedData = JSON.parse(storedData);
+  //     console.log("Simulator console: ", parsedData);
+  //     if (
+  // parsedData.dayData[0].allowance !== null &&
+  // parsedData.day !== null &&
+  // parsedData.currentExtra !== null &&
+  // parsedData.remainingMoney !== null
+  //     ) {
+  //       setDay(parsedData.day);
+  //       setCurrentDialog(0); // Skip dialogs if data is present
+  //       console.log("parsedData.dayData:", parsedData.dayData);
+  //       console.log("parsedData.day:", parsedData.day);
+  //       console.log("parsedData.currentExtra:", parsedData.currentExtra);
+  //       console.log("parsedData.remainingMoney:", parsedData.remainingMoney);
+  //     }
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "userData",
+      JSON.stringify({
+        priority,
+        day,
+        currentExtra,
+        remainingMoney,
+        dayData,
+      })
+    );
+  }, [priority, day, currentExtra, remainingMoney, dayData]);
 
   function nextDialog() {
     setCurrentDialog(currentDialog + 1);
@@ -32,7 +75,6 @@ export default function Simulator({ priority, dayData, setDayData, nextPage }) {
       setCurrentDialog(1);
     } else {
       nextPage();
-      setDay(1);
     }
   }
 
@@ -190,4 +232,14 @@ Simulator.propTypes = {
   dayData: PropTypes.array.isRequired,
   setDayData: PropTypes.func.isRequired,
   nextPage: PropTypes.func.isRequired,
+  day: PropTypes.number.isRequired,
+  setDay: PropTypes.func.isRequired,
+  currentDialog: PropTypes.number.isRequired,
+  setCurrentDialog: PropTypes.func.isRequired,
+  currentAllowance: PropTypes.number.isRequired,
+  setCurrentAllowance: PropTypes.func.isRequired,
+  currentExtra: PropTypes.number.isRequired,
+  setcurrentExtra: PropTypes.func.isRequired,
+  remainingMoney: PropTypes.number.isRequired,
+  setRemainingMoney: PropTypes.func.isRequired,
 };
