@@ -13,3 +13,13 @@ Clone this project by doing these steps:
 ### Website Link: https://kumpera.netlify.app/
 
 This project uses [React](https://react.dev/) for the front-end and uses [Chart.js](https://www.chartjs.org/) specifically [react-chartjs-2](https://react-chartjs-2.js.org/) for the charting of bar and pie charts and [Vite](https://vitejs.dev/) as a build tool.
+
+## Group Members
+- Alberto, Necolene
+- De dios, Wendel
+- Joaquin, Daniela
+- Lopez, Jenna Mae
+- Marquez, Jashlein Leanne
+- Quinto, Renz
+- Serapio, Alessandra
+- Viado, John Paul
